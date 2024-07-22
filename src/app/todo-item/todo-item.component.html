@@ -15,9 +15,9 @@
           />
         </>
       ) : ( -->
-        <h1 className="title">TITLE</h1>
-        <p className="description">DESCRIPTION</p>
-        <p>Created at:</p>
+        <h1 className="title">{{ todoItem.title }}</h1>
+        <p className="description">{{ todoItem.description }}</p>
+        <p>Created at: {{ todoItem.createdAt.toDateString() }}</p>
     </div>
 
     <div className="buttons">

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TodoItem } from '../models/todoItem.model';
 
 @Component({
     selector: 'app-todo-item',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
     styleUrl: './todo-item.component.css',
 })
 export class TodoItemComponent {
+    @Input({ required: true }) todoItem!: TodoItem;
     isEditing = false;
     handleSave() {}
     handleEdit() {}
