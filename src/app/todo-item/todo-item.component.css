@@ -1,0 +1,85 @@
+.todoItem {
+    width: 66.67%; /* 2/3 of the screen width */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; /* Optional: max width to prevent it from being too large */
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between; /* Space between content and buttons */
+    align-items: flex-start; /* Align items to the start (left) */
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.todoItem.done {
+    background-color: rgb(110, 126, 132);
+}
+
+.todoItem .content {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.todoItem .content p {
+    margin: 5px 0; /* Add some margin between paragraphs */
+}
+
+.todoItem .content .title {
+    align-self: flex-start; /* Ensure title is at the top left */
+    text-shadow: #777;
+    font-weight: bold; /* Make the title bold */
+}
+
+.todoItem .content .description {
+    width: 100%; /* Make description span the full width */
+    font-size: large;
+}
+
+.todoItem .buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: flex-start; /* Align buttons to the top */
+}
+
+.todoItem .buttons button {
+    margin-bottom: 10px; /* Space between buttons */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.todoItem .buttons button:hover {
+    background-color: #777; /* Slightly lighter background on hover */
+}
+
+.title-input,
+.description-input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: lightslategray;
+}
+
+.flicker {
+    animation: flicker-animation 1s infinite;
+}
+
+@keyframes flicker-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

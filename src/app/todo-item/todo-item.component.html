@@ -1,0 +1,32 @@
+<div class="todoItem">
+    <div class="content">
+        <!-- {isEditing ? (
+        <>
+          <input
+            className="title-input flicker"
+            type="text"
+            value={editedTitle}
+            onChange={(e) => setEditedTitle(e.target.value)}
+          />
+          <textarea
+            className="description-input flicker"
+            value={editedDescription}
+            onChange={(e) => setEditedDescription(e.target.value)}
+          />
+        </>
+      ) : ( -->
+        <h1 className="title">TITLE</h1>
+        <p className="description">DESCRIPTION</p>
+        <p>Created at:</p>
+    </div>
+
+    <div className="buttons">
+        @if(isEditing){
+        <button (click)="handleSave()">Save</button>
+        } @else{
+        <button (click)="handleDone()">DOne</button>
+        <button (click)="handleEdit()">Edit</button>
+        <button (click)="handleDelete()">Delete</button>
+        }
+    </div>
+</div>
