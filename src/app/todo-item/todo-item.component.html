@@ -15,16 +15,16 @@
           />
         </>
       ) : ( -->
-        <h1 className="title">{{ todoItem.title }}</h1>
-        <p className="description">{{ todoItem.description }}</p>
+        <h1 class="title">{{ todoItem.title }}</h1>
+        <p class="description">{{ todoItem.description }}</p>
         <p>Created at: {{ todoItem.createdAt.toDateString() }}</p>
     </div>
 
-    <div className="buttons">
+    <div class="buttons">
         @if(isEditing){
         <button (click)="handleSave()">Save</button>
         } @else{
-        <button (click)="handleDone()">DOne</button>
+        <button (click)="handleDone()">Done</button>
         <button (click)="handleEdit()">Edit</button>
         <button (click)="handleDelete()">Delete</button>
         }
