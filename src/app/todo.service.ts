@@ -39,9 +39,9 @@ export class TodoService {
         this.todoItems = this.todoItems.filter((item) => item !== itemToDelete);
     }
 
-    done(itemToDone: TodoItem) {
+    handleDoneStatus(itemToDone: TodoItem) {
         let itemIndex = this.todoItems.findIndex((item) => item === itemToDone);
-        this.todoItems[itemIndex].isDone = true;
+        this.todoItems[itemIndex].isDone = !this.todoItems[itemIndex].isDone;
     }
 
     update(

@@ -23,12 +23,11 @@
     <div class="buttons">
         @if(isEditing){
         <button (click)="handleSave()">Save</button>
-        }@else { @if(todoItem.isDone){
-        <button (click)="handleDone()">Undone</button>
         }@else {
-        <button (click)="handleDone()">Done</button>
+        <button (click)="handleDoneStatus()">
+            @if(todoItem.isDone){Undone}@else{Done}
+        </button>
         <button (click)="handleEdit()">Edit</button>
-        }
         <button (click)="handleDelete()">Delete</button>}
     </div>
 </div>

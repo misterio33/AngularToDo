@@ -37,10 +37,9 @@ export class TodoItemComponent {
     handleEdit() {
         this.isEditing = true;
     }
-    handleDone() {
-        this.todoService.done(this.todoItem);
+    handleDoneStatus() {
+        this.todoService.handleDoneStatus(this.todoItem);
     }
-    handleUnDone() {}
     handleDelete() {
         this.todoService.delete(this.todoItem);
     }
