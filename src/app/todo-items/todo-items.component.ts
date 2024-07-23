@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { TodoItem } from '../models/todoItem.model';
 import { TodoService } from '../todo.service';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 
@@ -12,5 +11,7 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
 })
 export class TodoItemsComponent {
     todoService = inject(TodoService);
-    todoItems: TodoItem[] = this.todoService.getTodoItems();
+    get todoItems() {
+        return this.todoService.getTodoItems();
+    }
 }

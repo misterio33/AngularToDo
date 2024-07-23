@@ -25,4 +25,8 @@ export class TodoService {
     getDoneTodoItems() {
         return this.todoItems.filter((item) => item.isDone === true);
     }
+
+    delete(itemToDelete: TodoItem) {
+        this.todoItems = this.todoItems.filter((item) => item !== itemToDelete);
+    }
 }

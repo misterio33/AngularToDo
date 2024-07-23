@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { TodoItem } from '../models/todoItem.model';
+import { TodoService } from '../todo.service';
 
 @Component({
     selector: 'app-todo-item',
@@ -10,10 +11,18 @@ import { TodoItem } from '../models/todoItem.model';
 })
 export class TodoItemComponent {
     @Input({ required: true }) todoItem!: TodoItem;
+    todoService = inject(TodoService);
     isEditing = false;
-    handleSave() {}
-    handleEdit() {}
+
+    handleSave() {
+        this.isEditing = false;
+    }
+    handleEdit() {
+        this.isEditing = true;
+    }
     handleDone() {}
     handleUnDone() {}
-    handleDelete() {}
+    handleDelete() {
+        this.todoService.delete(this.todoItem);
+    }
 }
