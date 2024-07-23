@@ -18,6 +18,13 @@ export class TodoService {
         },
     ];
 
+    constructor() {
+        const todoItems = localStorage.getItem('todoItems');
+        if (todoItems) {
+            this.todoItems = JSON.parse(todoItems);
+        }
+    }
+
     getTodoItems() {
         return this.todoItems.filter((item) => item.isDone === false);
     }
@@ -33,15 +40,18 @@ export class TodoService {
             isDone: false,
             createdAt: new Date().toDateString(),
         });
+        this.saveTodoItems();
     }
 
     delete(itemToDelete: TodoItem) {
         this.todoItems = this.todoItems.filter((item) => item !== itemToDelete);
+        this.saveTodoItems();
     }
 
     handleDoneStatus(itemToDone: TodoItem) {
         let itemIndex = this.todoItems.findIndex((item) => item === itemToDone);
         this.todoItems[itemIndex].isDone = !this.todoItems[itemIndex].isDone;
+        this.saveTodoItems();
     }
 
     update(
@@ -52,5 +62,10 @@ export class TodoService {
         let itemIndex = this.todoItems.findIndex((item) => item === itemToDone);
         this.todoItems[itemIndex].title = updatedTitle;
         this.todoItems[itemIndex].description = updatedDescription;
+        this.saveTodoItems();
+    }
+
+    private saveTodoItems() {
+        localStorage.setItem('todoItems', JSON.stringify(this.todoItems));
     }
 }
