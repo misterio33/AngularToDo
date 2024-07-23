@@ -26,6 +26,15 @@ export class TodoService {
         return this.todoItems.filter((item) => item.isDone === true);
     }
 
+    add(title: string, description: string) {
+        this.todoItems.unshift({
+            title: title,
+            description: description,
+            isDone: false,
+            createdAt: new Date(),
+        });
+    }
+
     delete(itemToDelete: TodoItem) {
         this.todoItems = this.todoItems.filter((item) => item !== itemToDelete);
     }

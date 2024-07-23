@@ -4,6 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
 import { DoneTodoItemsComponent } from './done-todo-items/done-todo-items.component';
+import { NewTodoComponent } from './new-todo/new-todo.component';
 
 @Component({
     selector: 'app-root',
@@ -14,6 +15,7 @@ import { DoneTodoItemsComponent } from './done-todo-items/done-todo-items.compon
         TodoItemComponent,
         TodoItemsComponent,
         DoneTodoItemsComponent,
+        NewTodoComponent,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
