@@ -14,7 +14,7 @@
             [(ngModel)]="editedDescription"
         />
         } @else{
-        <h1 class="title">{{ todoItem.title }}</h1>
+        <h1 class="title">{{ todoItem.title.toUpperCase() }}</h1>
         <p class="description">{{ todoItem.description }}</p>
         }
         <p>Created at: {{ todoItem.createdAt.toDateString() }}</p>

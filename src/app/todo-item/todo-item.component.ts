@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, Input, SimpleChanges } from '@angular/core';
 import { TodoItem } from '../models/todoItem.model';
 import { TodoService } from '../todo.service';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -18,6 +18,13 @@ export class TodoItemComponent {
     editedTitle = '';
     editedDescription = '';
 
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes['todoItem'] && changes['todoItem'].currentValue) {
+            this.editedTitle = this.todoItem.title;
+            this.editedDescription = this.todoItem.description;
+        }
+    }
+
     handleSave() {
         this.todoService.update(
             this.todoItem,
@@ -25,7 +32,6 @@ export class TodoItemComponent {
             this.editedDescription
         );
         this.isEditing = false;
-        console.log('adfasdf');
     }
     handleEdit() {
         this.isEditing = true;
