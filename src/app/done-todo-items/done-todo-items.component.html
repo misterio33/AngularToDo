@@ -1,0 +1,11 @@
+<br />
+<section class="todoItems">
+    @if (doneTodoItems.length > 0) {
+    <div class="message">
+        You have done {{ doneTodoItems.length }} items to do
+    </div>
+
+    @for(todoItem of doneTodoItems; track todoItem.title){
+    <app-todo-item [todoItem]="todoItem" />
+    } }
+</section>

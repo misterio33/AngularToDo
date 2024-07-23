@@ -1,7 +1,7 @@
 <section class="todoItems">
     <div class="message">
-        @if (todoItems.length > 0) { You have 5 items to do } @else { No items
-        to do, create a new one }
+        @if (todoItems.length > 0) { You have {{ todoItems.length }} items to do
+        } @else { No items to do, create a new one }
     </div>
 
     @for(todoItem of todoItems; track todoItem.title){

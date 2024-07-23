@@ -14,5 +14,6 @@ export class TodoItemComponent {
     handleSave() {}
     handleEdit() {}
     handleDone() {}
+    handleUnDone() {}
     handleDelete() {}
 }

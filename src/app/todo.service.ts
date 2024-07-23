@@ -19,6 +19,10 @@ export class TodoService {
     ];
 
     getTodoItems() {
-        return this.todoItems;
+        return this.todoItems.filter((item) => item.isDone === false);
+    }
+
+    getDoneTodoItems() {
+        return this.todoItems.filter((item) => item.isDone === true);
     }
 }
