@@ -38,4 +38,9 @@ export class TodoService {
     delete(itemToDelete: TodoItem) {
         this.todoItems = this.todoItems.filter((item) => item !== itemToDelete);
     }
+
+    done(itemToDone: TodoItem) {
+        let itemIndex = this.todoItems.findIndex((item) => item === itemToDone);
+        this.todoItems[itemIndex].isDone = true;
+    }
 }

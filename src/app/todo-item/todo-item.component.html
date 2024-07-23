@@ -1,4 +1,4 @@
-<div class="todoItem">
+<div [class]="{ todoItem: true, done: todoItem.isDone }">
     <div class="content">
         <!-- {isEditing ? (
         <>
