@@ -43,4 +43,14 @@ export class TodoService {
         let itemIndex = this.todoItems.findIndex((item) => item === itemToDone);
         this.todoItems[itemIndex].isDone = true;
     }
+
+    update(
+        itemToDone: TodoItem,
+        updatedTitle: string,
+        updatedDescription: string
+    ) {
+        let itemIndex = this.todoItems.findIndex((item) => item === itemToDone);
+        this.todoItems[itemIndex].title = updatedTitle;
+        this.todoItems[itemIndex].description = updatedDescription;
+    }
 }

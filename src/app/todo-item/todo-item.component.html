@@ -1,32 +1,34 @@
 <div [class]="{ todoItem: true, done: todoItem.isDone }">
     <div class="content">
-        <!-- {isEditing ? (
-        <>
-          <input
-            className="title-input flicker"
+        @if(isEditing){
+        <input
+            class="title-input flicker"
             type="text"
-            value={editedTitle}
-            onChange={(e) => setEditedTitle(e.target.value)}
-          />
-          <textarea
-            className="description-input flicker"
-            value={editedDescription}
-            onChange={(e) => setEditedDescription(e.target.value)}
-          />
-        </>
-      ) : ( -->
+            name="editedTitle"
+            [(ngModel)]="editedTitle"
+        />
+        <input
+            class="description-input flicker"
+            type="text"
+            name="editedDescription"
+            [(ngModel)]="editedDescription"
+        />
+        } @else{
         <h1 class="title">{{ todoItem.title }}</h1>
         <p class="description">{{ todoItem.description }}</p>
+        }
         <p>Created at: {{ todoItem.createdAt.toDateString() }}</p>
     </div>
 
     <div class="buttons">
         @if(isEditing){
         <button (click)="handleSave()">Save</button>
-        } @else{
+        }@else { @if(todoItem.isDone){
+        <button (click)="handleDone()">Undone</button>
+        }@else {
         <button (click)="handleDone()">Done</button>
         <button (click)="handleEdit()">Edit</button>
-        <button (click)="handleDelete()">Delete</button>
         }
+        <button (click)="handleDelete()">Delete</button>}
     </div>
 </div>
