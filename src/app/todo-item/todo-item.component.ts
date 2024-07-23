@@ -2,11 +2,12 @@ import { Component, inject, Input, SimpleChanges } from '@angular/core';
 import { TodoItem } from '../models/todoItem.model';
 import { TodoService } from '../todo.service';
 import { FormsModule, NgForm } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-todo-item',
     standalone: true,
-    imports: [FormsModule],
+    imports: [FormsModule, DatePipe],
     templateUrl: './todo-item.component.html',
     styleUrl: './todo-item.component.css',
 })

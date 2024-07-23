@@ -8,13 +8,13 @@ export class TodoService {
             title: 'title1',
             description: 'Description for the first task',
             isDone: false,
-            createdAt: new Date(),
+            createdAt: new Date().toDateString(),
         },
         {
             title: 'title2',
             description: 'Description for the second task',
             isDone: false,
-            createdAt: new Date(),
+            createdAt: new Date().toDateString(),
         },
     ];
 
@@ -31,7 +31,7 @@ export class TodoService {
             title: title,
             description: description,
             isDone: false,
-            createdAt: new Date(),
+            createdAt: new Date().toDateString(),
         });
     }
 
